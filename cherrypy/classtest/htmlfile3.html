@@ -1,0 +1,87 @@
+<script>
+function ListenToEvents (event) {
+  if (event.defaultPrevented) {
+    return; // Do nothing if the event was already processed
+  }
+
+  switch (event.key) {
+    case "ArrowDown":
+      // code for "down arrow" key press.
+	  console.log("ArrowDown")
+	  document.Backwards.submit();
+      break;
+    case "ArrowUp":
+      // code for "up arrow" key press.
+      console.log("ArrowUp")
+	  document.Forward.submit();
+      break;
+    case "ArrowLeft":
+      // code for "left arrow" key press.
+      console.log("ArrowLeft")
+	  document.Left.submit();
+      break;
+    case "ArrowRight":
+      // code for "right arrow" key press.
+      console.log("ArrowRight")
+	  document.Right.submit();
+      break;
+     case " ":
+      // code for "space" key press.
+      console.log("Space")
+	  document.Stop.submit();
+      break;
+    default:
+      return; // Quit when this doesn't handle the key event.
+  }
+
+  // Cancel the default action to avoid it being handled twice
+  event.preventDefault();
+}
+
+//Add to the window object a listener for events, only for 
+//						keys down  
+//								   call this function when a key is pressed
+//																		 be the first to see the event
+window.addEventListener("keydown", ListenToEvents, true);
+</script>
+<center>
+    <div align="center">
+        <table>
+            <tr>
+                <td>
+                    <form name="Forward" method='get' action='Forward'>
+                        <input type='submit' value='Forward!!!' style='height:250px;width:250px'>
+                    </form>
+                </td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td>
+                    <form name="Left" method='get' action='Left'>
+                        <input type='submit' value='Left!!!' style='height:250px;width:250px'>
+                    </form>
+                </td>
+                <td>
+                    <form name="Stop" method='get' action='Stop'>
+                        <input type='submit' value='Stop!!!' style='height:250px;width:250px'>
+                    </form>
+                </td>
+                <td>
+                    <form name="Right" method='get' action='Right'>
+                        <input type='submit' value='Right!!!' style='height:250px;width:250px'>
+                    </form>
+                </td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td>
+                    <form name="Backwards" method='get' action='Backwards'>
+                        <input type='submit' value='Backwards!!!' style='height:250px;width:250px'>
+                    </form>
+                </td>
+            </tr>
+        </table>
+    </div>
+</center>
