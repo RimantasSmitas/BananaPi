@@ -12,9 +12,9 @@ BIN1 = 22
 BIN2 = 10
 
 #Pins for sensors
-A = 13 #Right
-B = 6 #Middle
-C = 5 #Left
+A = 13 # Right
+B = 6 # Middle
+C = 5 # Left
 
 
 GPIO.setwarnings(False)
@@ -35,11 +35,11 @@ GPIO.setup(C, GPIO.IN)
 def goodbye():
 	GPIO.cleanup()
 
-#def handler(signum, frame): 
-#	print("Signal handler called with signal ", signum) 
+#def handler(signum, frame):
+#	print("Signal handler called with signal ", signum)
 #	print("existing")
 #	GPIO.output(PWMA, GPIO.LOW)
-#	GPIO.output(PWBA, GPIO.LOW) 
+#	GPIO.output(PWBA, GPIO.LOW)
 #	GPIO.cleanup()
 #	exit(0))
 
