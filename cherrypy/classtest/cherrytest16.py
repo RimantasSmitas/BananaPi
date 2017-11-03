@@ -27,7 +27,7 @@ GPIO.setup(BIN1, GPIO.OUT)
 GPIO.setup(BIN2, GPIO.OUT)
 
 class motorController:
-	@cherrypy.expose
+    @cherrypy.expose
 	def SetMotorAforward(motorShouldRun):
 		if(motorShouldRun):
 			GPIO.output(AIN1, GPIO.HIGH)
@@ -37,7 +37,7 @@ class motorController:
 			GPIO.output(PWMA, GPIO.LOW)
 		print('A forward', motorShouldRun)
 
-	@cherrypy.expose
+    @cherrypy.expose
 	def SetMotorBforward(motorShouldRun):
 		if(motorShouldRun):
 			GPIO.output(BIN1, GPIO.HIGH)
@@ -47,7 +47,7 @@ class motorController:
 			GPIO.output(PWMB, GPIO.LOW)
 		print('B forward', motorShouldRun)
 
-	@cherrypy.expose
+    @cherrypy.expose
 	def SetMotorAbackward(motorShouldRun):
 		if(motorShouldRun):
 			GPIO.output(AIN1, GPIO.LOW)
@@ -57,7 +57,7 @@ class motorController:
 			GPIO.output(PWMA, GPIO.LOW)
 		print('A forward', motorShouldRun)
 
-	@cherrypy.expose
+    @cherrypy.expose
 	def SetMotorBbackward(motorShouldRun):
 		if(motorShouldRun):
 			GPIO.output(BIN1, GPIO.LOW)
@@ -68,40 +68,40 @@ class motorController:
 		print('B forward', motorShouldRun)
 
 
-	@cherrypy.expose
+    @cherrypy.expose
 	def BothMotorsBackwards():
-        motorController.SetMotorAbackward(True)
-        motorController.SetMotorBbackward(True)
-        return index_html
+        	motorController.SetMotorAbackward(True)
+        	motorController.SetMotorBbackward(True)
+		return index_html
 
-	@cherrypy.expose
+    @cherrypy.expose
 	def index(self):
 		return index_html
 
-	@cherrypy.expose
+    @cherrypy.expose
 	def Forward(self):
 		print ('Set both motors to move forward')
 		motorController.SetMotorAforward(True)
 		motorController.SetMotorBforward(True)
 		return index_html
 
-	@cherrypy.expose
+    @cherrypy.expose
 	def Stop(self):
 		print ('Set both motors to stop')
 		motorController.SetMotorAforward(False)
 		motorController.SetMotorBforward(False)
 		return index_html
 
-	@cherrypy.expose
+    @cherrypy.expose
 	def Right(self):
-        print ('Set 1 motor high, and 1 motor low')
-        motorController.SetMotorAforward(True)
-        motorController.SetMotorBbackward(True)
-        return index_html
+		print ('Set 1 motor high, and 1 motor low')
+		motorController.SetMotorAforward(True)
+		motorController.SetMotorBbackward(True)
+		return index_html
 
     @cherrypy.expose
     def Left(self):
-        print ('Set 1 motor high, and 1 motor low')
+	print ('Set 1 motor high, and 1 motor low')
         motorController.SetMotorAbackward(True)
         motorController.SetMotorBforward(True)
         return index_html
