@@ -27,13 +27,13 @@ GPIO.setup(BIN2, GPIO.OUT)
 class motorController:
     @cherrypy.expose
     def SetMotorAforward(motorShouldRun):
-            if(motorShouldRun):
-                GPIO.output(AIN1, GPIO.HIGH)
-                GPIO.output(AIN2, GPIO.LOW)
-                GPIO.output(PWMA, GPIO.HIGH)
-            else:
-                GPIO.output(PWMA, GPIO.LOW)
-                print('A forward', motorShouldRun)
+        if(motorShouldRun):
+            GPIO.output(AIN1, GPIO.HIGH)
+            GPIO.output(AIN2, GPIO.LOW)
+            GPIO.output(PWMA, GPIO.HIGH)
+        else:
+            GPIO.output(PWMA, GPIO.LOW)
+            print('A forward', motorShouldRun)
 
     @cherrypy.expose
     def SetMotorBforward(motorShouldRun):
