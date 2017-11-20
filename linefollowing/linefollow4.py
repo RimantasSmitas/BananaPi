@@ -5,8 +5,8 @@ import atexit
 
 defaultLSpeed = 50
 defaultRSpeed = 47.8
-defaulTurnSpeedO = 50
-defaulTurnSpeedI = 30
+turnSpeedDifferenceLight = 20
+turnSpeedDifferenceHard = 30
 
 PWMA = 2
 PWMB = 3
@@ -36,74 +36,64 @@ GPIO.setup(B, GPIO.IN)
 GPIO.setup(C, GPIO.IN)
 
 rightmotor = GPIO.PWM(PWMA, 50)
-rightmotor.start(0)
 leftmotor = GPIO.PWM(PWMB, 50)
+rightmotor.start(0)
 leftmotor.start(0)
-
 
 @atexit.register
 def goodbye():
     GPIO.cleanup()
 
-def setMotorA(motorSpeed):
+def Drive(rightMotorSpeed,leftMotorSpeed):
     GPIO.output(AIN1, GPIO.HIGH)
     GPIO.output(AIN2, GPIO.LOW)
-    rightmotor.ChangeDutyCycle(motorSpeed)
-
-def setMotorB(motorSpeed):
     GPIO.output(BIN1, GPIO.HIGH)
     GPIO.output(BIN2, GPIO.LOW)
-    leftmotor.ChangeDutyCycle(motorSpeed)
+    leftmotor.ChangeDutyCycle(leftMotorSpeed)
+    rightmotor.ChangeDutyCycle(rightMotorSpeed)
 
-def setMotorABackwards(motorSpeed):
+def Backwards(rightMotorSpeed,leftMotorSpeed):
     GPIO.output(AIN1, GPIO.LOW)
     GPIO.output(AIN2, GPIO.HIGH)
-    rightmotor.ChangeDutyCycle(motorSpeed)
-
-def setMotorBBackwards(motorSpeed):
     GPIO.output(BIN1, GPIO.LOW)
     GPIO.output(BIN2, GPIO.HIGH)
-    leftmotor.ChangeDutyCycle(motorSpeed)
+    leftmotor.ChangeDutyCycle(leftMotorSpeed)
+    rightmotor.ChangeDutyCycle(rightMotorSpeed)
 
-def Forward(motorASpeed,motorBSpeed):
-    print("Calling forward")
-    setMotorA(motorASpeed)
-    setMotorB(motorBSpeed)
+def Left():
+    Drive(defaultRSpeed+turnSpeedDifferenceLight,defaultLSpeed-turnSpeedDifferenceLight)
+
+def HardLeft():
+    Drive(defaultRSpeed+turnSpeedDifferenceHard,defaultLSpeed-turnSpeedDifferenceHard)
+
+def Right():
+    Drive(defaultRSpeed-turnSpeedDifferenceLight,defaultLSpeed+turnSpeedDifferenceLight)
+
+def HardRight():
+    Drive(defaultRSpeed-turnSpeedDifferenceHard,defaultLSpeed+turnSpeedDifferenceHard)
+
+def Forward():
+    Drive(defaultRSpeed,defaultLSpeed)
 
 def Stop():
     print ('Calling  stop')
-    setMotorA(0)
-    setMotorB(0)
+    Drive(0,0)
 
-def Right():
-    Forward(70,55)
-    print ('Turning right')
-    setMotorABackwards(True)
-    setMotorB(True)
-
-def Left():
-    Forward(55,70)
-    print ('Turning left')
-
-def Backwards():
-    print ('Set both motors to run reverse')
-    setMotorABackwards(defaultRSpeed)
-    setMotorBBackwards(defaultLSpeed)
 def lineFollow():
     while True:
         print(GPIO.input(A), GPIO.input(B), GPIO.input(C))
         if GPIO.input(A)==1 and GPIO.input(B)==0 and GPIO.input(C)==0:
-            Left()
+            HardLeft()
         elif GPIO.input(A)==1 and GPIO.input(B)==1 and GPIO.input(C)==0:
             Left()
         elif GPIO.input(A)==0 and GPIO.input(B)==0 and GPIO.input(C)==1:
-            Right()
+            HardRight()
         elif GPIO.input(A)==0 and GPIO.input(B)==1 and GPIO.input(C)==1:
             Right()
         elif GPIO.input(A)==0 and GPIO.input(B)==1 and GPIO.input(C)==0:
-            Forward(defaultRSpeed,defaultLSpeed)
+            Forward()
         elif GPIO.input(A)==1 and GPIO.input(B)==1 and GPIO.input(C)==1:
-            Forward(defaultRSpeed,defaultLSpeed)
+            Forward()
         elif GPIO.input(A)==0 and GPIO.input(B)==0 and GPIO.input(C)==0:
             Backwards()
             time.sleep(0.1)
