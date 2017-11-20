@@ -51,7 +51,6 @@ def Drive(rightMotorSpeed,leftMotorSpeed):
     GPIO.output(BIN2, GPIO.LOW)
     leftmotor.ChangeDutyCycle(leftMotorSpeed)
     rightmotor.ChangeDutyCycle(rightMotorSpeed)
-    print(rightMotorSpeed,leftMotorSpeed)
 
 def Backwards(rightMotorSpeed,leftMotorSpeed):
     GPIO.output(AIN1, GPIO.LOW)
@@ -60,7 +59,6 @@ def Backwards(rightMotorSpeed,leftMotorSpeed):
     GPIO.output(BIN2, GPIO.HIGH)
     leftmotor.ChangeDutyCycle(leftMotorSpeed)
     rightmotor.ChangeDutyCycle(rightMotorSpeed)
-    print(rightMotorSpeed,leftMotorSpeed)
 
 def Left():
     Drive(defaultRSpeed+turnSpeedDifferenceLight,defaultLSpeed-turnSpeedDifferenceLight)
@@ -86,16 +84,22 @@ def lineFollow():
         print(GPIO.input(A), GPIO.input(B), GPIO.input(C))
         if GPIO.input(A)==1 and GPIO.input(B)==0 and GPIO.input(C)==0:
             HardLeft()
+            print("HardLeft")
         elif GPIO.input(A)==1 and GPIO.input(B)==1 and GPIO.input(C)==0:
             Left()
+            print("Left")
         elif GPIO.input(A)==0 and GPIO.input(B)==0 and GPIO.input(C)==1:
             HardRight()
+            print("HardRight")
         elif GPIO.input(A)==0 and GPIO.input(B)==1 and GPIO.input(C)==1:
             Right()
+            print("Right")
         elif GPIO.input(A)==0 and GPIO.input(B)==1 and GPIO.input(C)==0:
             Forward()
+            print("Forward")
         elif GPIO.input(A)==1 and GPIO.input(B)==1 and GPIO.input(C)==1:
             Forward()
+            print("Forward")
         elif GPIO.input(A)==0 and GPIO.input(B)==0 and GPIO.input(C)==0:
             Backwards(defaultRSpeed,defaultLSpeed)
             time.sleep(0.1)
