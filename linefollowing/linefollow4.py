@@ -51,6 +51,7 @@ def Drive(rightMotorSpeed,leftMotorSpeed):
     GPIO.output(BIN2, GPIO.LOW)
     leftmotor.ChangeDutyCycle(leftMotorSpeed)
     rightmotor.ChangeDutyCycle(rightMotorSpeed)
+    print(rightMotorSpeed,leftMotorSpeed)
 
 def Backwards(rightMotorSpeed,leftMotorSpeed):
     GPIO.output(AIN1, GPIO.LOW)
@@ -59,6 +60,7 @@ def Backwards(rightMotorSpeed,leftMotorSpeed):
     GPIO.output(BIN2, GPIO.HIGH)
     leftmotor.ChangeDutyCycle(leftMotorSpeed)
     rightmotor.ChangeDutyCycle(rightMotorSpeed)
+    print(rightMotorSpeed,leftMotorSpeed)
 
 def Left():
     Drive(defaultRSpeed+turnSpeedDifferenceLight,defaultLSpeed-turnSpeedDifferenceLight)
