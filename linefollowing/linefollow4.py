@@ -5,8 +5,8 @@ import atexit
 
 defaultLSpeed = 50
 defaultRSpeed = 47.8
-turnSpeedDifferenceLight = 20
-turnSpeedDifferenceHard = 30
+turnSpeedDifferenceLight = 10
+turnSpeedDifferenceHard = 15
 
 PWMA = 2
 PWMB = 3
@@ -95,7 +95,7 @@ def lineFollow():
         elif GPIO.input(A)==1 and GPIO.input(B)==1 and GPIO.input(C)==1:
             Forward()
         elif GPIO.input(A)==0 and GPIO.input(B)==0 and GPIO.input(C)==0:
-            Backwards()
+            Backwards(defaultRSpeed,defaultLSpeed)
             time.sleep(0.1)
 
 lineFollow()
