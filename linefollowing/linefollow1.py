@@ -30,7 +30,6 @@ GPIO.setup(A, GPIO.IN)
 GPIO.setup(B, GPIO.IN)
 GPIO.setup(C, GPIO.IN)
 
-
 @atexit.register
 def goodbye():
 	GPIO.cleanup()
