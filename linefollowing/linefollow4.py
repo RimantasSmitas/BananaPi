@@ -102,9 +102,9 @@ def lineFollow():
         elif GPIO.input(A)==0 and GPIO.input(B)==1 and GPIO.input(C)==1:
             Right()
         elif GPIO.input(A)==0 and GPIO.input(B)==1 and GPIO.input(C)==0:
-            Forward()
+            Forward(defaultRSpeed,defaultLSpeed)
         elif GPIO.input(A)==1 and GPIO.input(B)==1 and GPIO.input(C)==1:
-            Forward()
+            Forward(defaultRSpeed,defaultRSpeed)
         elif GPIO.input(A)==0 and GPIO.input(B)==0 and GPIO.input(C)==0:
             Backwards()
             time.sleep(0.1)
