@@ -87,9 +87,8 @@ def Left():
 
 def Backwards():
     print ('Set both motors to run reverse')
-    setMotorABackwards(defaultLSpeed)
-    setMotorBBackwards(defaultRSpeed)
-
+    setMotorABackwards(defaultRSpeed)
+    setMotorBBackwards(defaultLSpeed)
 def lineFollow():
     while True:
         print(GPIO.input(A), GPIO.input(B), GPIO.input(C))
@@ -104,7 +103,7 @@ def lineFollow():
         elif GPIO.input(A)==0 and GPIO.input(B)==1 and GPIO.input(C)==0:
             Forward(defaultRSpeed,defaultLSpeed)
         elif GPIO.input(A)==1 and GPIO.input(B)==1 and GPIO.input(C)==1:
-            Forward(defaultRSpeed,defaultRSpeed)
+            Forward(defaultRSpeed,defaultLSpeed)
         elif GPIO.input(A)==0 and GPIO.input(B)==0 and GPIO.input(C)==0:
             Backwards()
             time.sleep(0.1)
