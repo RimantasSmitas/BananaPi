@@ -3,8 +3,8 @@ import time
 import signal, os
 import atexit
 
-defaultLSpeed = 50
-defaultRSpeed = 47.8
+defaultLSpeed = 75
+defaultRSpeed = 72.8
 turnSpeedDifferenceLight = 11
 turnSpeedDifferenceHard = 13
 
@@ -99,9 +99,9 @@ def Stop():
 
 
 def spinLeft():
-    BackwardsL(defaultLSpeed)
-    DriveR(defaultRSpeed)
+    BackwardsL(defaultLSpeed/3)
+    DriveR(defaultRSpeed/3)
 
 def spinRight():
-    BackwardsR(defaultRSpeed)
-    DriveL(defaultLSpeed)
+    BackwardsR(defaultRSpeed/3)
+    DriveL(defaultLSpeed/3)
