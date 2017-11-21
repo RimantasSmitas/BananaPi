@@ -5,8 +5,8 @@ import atexit
 
 defaultLSpeed = 50
 defaultRSpeed = 47.8
-turnSpeedDifferenceLight = 10
-turnSpeedDifferenceHard = 15
+turnSpeedDifferenceLight = 11
+turnSpeedDifferenceHard = 13
 
 PWMA = 2
 PWMB = 3
