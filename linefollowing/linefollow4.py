@@ -102,6 +102,6 @@ def lineFollow():
             print("Forward")
         elif GPIO.input(A)==0 and GPIO.input(B)==0 and GPIO.input(C)==0:
             Backwards(defaultRSpeed,defaultLSpeed)
-            time.sleep(0.1)
+        time.sleep(0.1)
 
 lineFollow()
