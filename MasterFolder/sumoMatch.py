@@ -51,7 +51,7 @@ def lookForEnemy():
         print("Sensors BACK are not clean, going front")
         carEngine.forward()
         time.sleep(1)
-        stop()
+        carEngine.stop()
     else:
         if range > 50:
             carEngine.spinLeft()
