@@ -46,9 +46,9 @@ def sensorBackClean():
 
 def lookForEnemy():
     range = carEngine.findEnemyDistance(0)
-    if sensorsFrontClean() == False:
+    if sensorsFrontClean() is False:
         escapeBack()
-    elif sensorBackClean() == False:
+    elif sensorBackClean() is False:
         charge()
     else:
         if range > 50:
