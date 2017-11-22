@@ -43,6 +43,8 @@ sonarIn = 21
 sonarOut = 20
 
 # Sonar function
+
+
 def findEnemyDistance(sensor):
     pingtime = 0
     echotime = 0

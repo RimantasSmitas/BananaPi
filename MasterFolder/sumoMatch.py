@@ -12,7 +12,7 @@ import carEngine
 
 def escapeBack():
     print("Escaping to the back.")
-    backwardsBoth()
+    carEngine.backwardsBoth()
     time.sleep(1)
     stop()
 
@@ -21,7 +21,7 @@ def charge():
     print("Charge forward")
     for number in range(1, 20):
         if sensorsFrontClean:
-            forward()
+            carEngine.forward()
             time.sleep(0.05)
         else:
             escapeBack()
@@ -30,14 +30,14 @@ def charge():
 
 
 def sensorsFrontClean():
-    print(GPIO.input(A), GPIO.input(B), GPIO.input(C))
-    if GPIO.input(A) == 0 and GPIO.input(B) == 0 and GPIO.input(C) == 0:
+    print(carEngine.getSensorA(), carEngine.getSensorB(), carEngine.getSensorC())
+    if carEngine.getSensorA() == 0 and carEngine.getSensorB() == 0 and carEngine.getSensorC() == 0:
         return True
     return False
 
 
 def sensorBackClean():
-    if GPIO.input(D) == 0:
+    if carEngine.getSensorD() == 0:
         return True
     return False
 
@@ -45,7 +45,7 @@ def sensorBackClean():
 # main code
 
 def lookForEnemy():
-    range = findEnemyDistance(0)
+    range = carEngine.findEnemyDistance(0)
     if sensorsFrontClean() == False:
         escapeBack()
     elif sensorBackClean() == False:
