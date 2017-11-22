@@ -11,13 +11,9 @@ SLEEPTIMER = 0.005
 
 
 
-GPIO.setup(A, GPIO.IN)
-GPIO.setup(B, GPIO.IN)
-GPIO.setup(C, GPIO.IN)
-
 def lineFollow():
     while True:
-        print(GPIO.input(A), GPIO.input(B), GPIO.input(C))
+        print(carEngine.getSensorA, carEngine.getSensorB, carEngine.getSensorC)
         if carEngine.getSensorA==1 and carEngine.getSensorB==0 and carEngine.getSensorB==0:
             carEngine.spinLeft()
             print("Spin Left")
