@@ -13,7 +13,7 @@ sleeptimer = 0.005
 
 def lineFollow():
     while True:
-        print(carEngine.getSensorA, carEngine.getSensorB, carEngine.getSensorC)
+        print(carEngine.getSensorA(), carEngine.getSensorB(), carEngine.getSensorC())
         if carEngine.getSensorA()==1 and carEngine.getSensorB()==0 and carEngine.getSensorB()==0:
             carEngine.spinLeft()
             print("Spin Left")
