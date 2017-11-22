@@ -8,7 +8,7 @@ function ListenToEventsDown (event) {
     case "ArrowDown":
       // code for "down arrow" key press.
 	  console.log("ArrowDown")
-	  document.bothBackwards.submit();
+	  document.backwardsBoth.submit();
       break;
     case "ArrowUp":
       // code for "up arrow" key press.
@@ -78,8 +78,8 @@ window.addEventListener("keyup", ListenToEventsUp, true);
         <table>
             <tr>
                 <td>
-                    <form name="Forward" method='get' action='forward'>
-                        <input type='submit' value='forward!!!' style='height:250px;width:250px'>
+                    <form name="forward" method='get' action='forward'>
+                        <input type='submit' value='forward' style='height:250px;width:250px'>
                     </form>
                 </td>
             </tr>
@@ -106,8 +106,8 @@ window.addEventListener("keyup", ListenToEventsUp, true);
         <table>
             <tr>
                 <td>
-                    <form name="backwards" method='get' action='bothBackwards'>
-                        <input type='submit' value='Backwards!!!' style='height:250px;width:250px'>
+                    <form name="backwardsBoth" method='get' action='backwardsBoth'>
+                        <input type='submit' value="backwardsBoth" style='height:250px;width:250px'>
                     </form>
                 </td>
             </tr>
