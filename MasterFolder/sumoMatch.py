@@ -51,7 +51,7 @@ def lookForEnemy():
         charge()
     else:
         if range > 50:
-            carEngine.left()
+            carEngine.spinLeft()
         elif range < 50:
             charge()
 
