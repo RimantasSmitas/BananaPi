@@ -146,27 +146,28 @@ def spinRight():
 A = 13 # Right
 B = 6 # Middle
 C = 5 # Left
+D = 19 # Back
+
 GPIO.setup(A, GPIO.IN)
 GPIO.setup(B, GPIO.IN)
 GPIO.setup(C, GPIO.IN)
+GPIO.setup(D, GPIO.IN)
+
 
 def getSensorA():
     return GPIO.input(A)
 
-# sensor the middle
-
 
 def getSensorB():
-    b = GPIO.input(B)
-    return b
-    print(b)
-# sensor on the left
+    return GPIO.input(B)
 
 
 def getSensorC():
-    c = GPIO.input(C)
-    return c
-    print(c)
+    return GPIO.input(C)
+
+
+def getSensorD():
+    return GPIO.input(D)
 
 
 def getSonar():
