@@ -110,7 +110,7 @@ GPIO.setup(B, GPIO.IN)
 GPIO.setup(C, GPIO.IN)
 
 def getSensorA():
-
+    print("Message")
     a = GPIO.input(A)
     print(GPIO.input(13))
 
