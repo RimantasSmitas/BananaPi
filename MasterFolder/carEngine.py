@@ -91,6 +91,7 @@ def backwardsL(leftMotorSpeed):
     GPIO.output(BIN2, GPIO.HIGH)
     leftMotor.ChangeDutyCycle(leftMotorSpeed)
 
+
 def left():
     driveR(defaultRSpeed+turnSpeedDifferenceLight)
     driveL(defaultLSpeed - turnSpeedDifferenceLight)
@@ -107,23 +108,8 @@ def right():
 
 
 def hardRight():
-=======
-def right():
-    driveR(defaultRSpeed+turnSpeedDifferenceLight)
-    driveL(defaultLSpeed - turnSpeedDifferenceLight)
-
-def hardRight():
     driveR(defaultRSpeed+turnSpeedDifferenceHard)
     driveL(defaultLSpeed - turnSpeedDifferenceHard)
-
-def left():
-    driveR(defaultRSpeed-turnSpeedDifferenceLight)
-    driveL(defaultLSpeed + turnSpeedDifferenceLight)
-
-def hardLeft():
->>>>>>> 22355f545b37edf8f6be3d4fc2821db2ae4b9283
-    driveR(defaultRSpeed-turnSpeedDifferenceHard)
-    driveL(defaultLSpeed + turnSpeedDifferenceHard)
 
 
 def forward():
