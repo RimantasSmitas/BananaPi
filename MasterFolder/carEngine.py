@@ -102,9 +102,9 @@ def spinRight():
 #sensor on the right
 
 #Setting variables and pins for sensors
-A = 5 # Right
+A = 13 # Right
 B = 6 # Middle
-C = 13 # Left
+C = 5 # Left
 GPIO.setup(A, GPIO.IN)
 GPIO.setup(B, GPIO.IN)
 GPIO.setup(C, GPIO.IN)
