@@ -40,7 +40,7 @@ class motorController:
 
     @cherrypy.expose
     def forward(self):
-        carEngine.Forward()
+        carEngine.forward()
         return index_html
 
     @cherrypy.expose
@@ -59,8 +59,8 @@ class motorController:
         return index_html
 
     @cherrypy.expose
-    def bothBackward(self):
-        carEngine.bothBackward()
+    def bothBackwards(self):
+        carEngine.bothBackwards()
         return index_html
 
 
