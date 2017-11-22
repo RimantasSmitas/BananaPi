@@ -29,7 +29,6 @@ def charge():
 
 
 def sensorsFrontClean():
-    print(carEngine.getSensorA(), carEngine.getSensorB(), carEngine.getSensorC())
     if carEngine.getSensorA() == 0 and carEngine.getSensorB() == 0 and carEngine.getSensorC() == 0:
         return True
     return False
@@ -46,9 +45,13 @@ def sensorBackClean():
 def lookForEnemy():
     range = carEngine.findEnemyDistance(0)
     if sensorsFrontClean() is False:
+        print("Sensors FRONT are not clean, going back")
         escapeBack()
     elif sensorBackClean() is False:
-        charge()
+        print("Sensors BACK are not clean, going front")
+        carEngine.forward()
+        time.sleep(1)
+        stop()
     else:
         if range > 50:
             carEngine.spinLeft()
@@ -59,4 +62,4 @@ def lookForEnemy():
 #the actual code run
 while True:
     lookForEnemy()
-    time.sleep(.001)
+    time.sleep(.005)
