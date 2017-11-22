@@ -91,8 +91,6 @@ def backwardsL(leftMotorSpeed):
     GPIO.output(BIN2, GPIO.HIGH)
     leftMotor.ChangeDutyCycle(leftMotorSpeed)
 
-<<<<<<< HEAD
-
 def left():
     driveR(defaultRSpeed+turnSpeedDifferenceLight)
     driveL(defaultLSpeed - turnSpeedDifferenceLight)
