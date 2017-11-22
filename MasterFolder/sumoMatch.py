@@ -19,12 +19,11 @@ def escapeBack():
 
 def charge():
     print("Charge forward")
-    for number in range(1, 20):
-        if sensorsFrontClean:
-            carEngine.forward()
-            time.sleep(0.05)
-        else:
-            escapeBack()
+    if sensorsFrontClean:
+        carEngine.forward()
+        time.sleep(0.05)
+    else:
+        escapeBack()
 
 # Checking the sensors around the car
 
