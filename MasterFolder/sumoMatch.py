@@ -54,6 +54,7 @@ def lookForEnemy():
         carEngine.stop()
     else:
         if range > 50:
+            print("Range is ", range, " spinning left.")
             carEngine.spinLeft()
         elif range < 50:
             charge()
