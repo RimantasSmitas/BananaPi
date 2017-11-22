@@ -109,6 +109,7 @@ def spinRight():
 #sensor on the right
 def getSensorA():
     a = GPIO.input(A)
+    print(GPIO.input(A))
     print(a)
     return a
 
