@@ -128,4 +128,3 @@ def getSonar():
 @atexit.register
 def goodbye():
     GPIO.cleanup()
-
