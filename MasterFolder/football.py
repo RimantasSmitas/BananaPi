@@ -1,9 +1,6 @@
 import cherrypy
 import RPi.GPIO as GPIO
-import time
-import signal, os
 import atexit
-
 import sys
 sys.path.insert(0, '/home/pi/robocar/MasterFolder')
 import carEngine
