@@ -14,7 +14,7 @@ def escapeBack():
     print("Escaping to the back.")
     carEngine.backwardsBoth()
     time.sleep(1)
-    stop()
+    carEngine.stop()
 
 
 def charge():
@@ -52,7 +52,7 @@ def lookForEnemy():
         charge()
     else:
         if range > 50:
-            left()
+            carEngine.left()
         elif range < 50:
             charge()
 
