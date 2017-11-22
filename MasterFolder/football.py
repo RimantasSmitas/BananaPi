@@ -33,39 +33,36 @@ def goodbye():
     GPIO.cleanup()
 
 
-@cherrypy.expose
-def index(self):
-    return index_html
+class motorController:
+    @cherrypy.expose
+    def index(self):
+        return index_html
 
+    @cherrypy.expose
+    def forward(self):
+        carEngine.Forward()
+        return index_html
 
-@cherrypy.expose
-def forward(self):
-    carEngine.Forward()
-    return index_html
+    @cherrypy.expose
+    def stop(self):
+        carEngine.stop()
+        return index_html
 
+    @cherrypy.expose
+    def right(self):
+        carEngine.right()
+        return index_html
 
-@cherrypy.expose
-def stop(self):
-    carEngine.stop()
-    return index_html
+    @cherrypy.expose
+    def left(self):
+        carEngine.left()
+        return index_html
 
-
-@cherrypy.expose
-def right(self):
-    carEngine.right()
-    return index_html
-
-
-@cherrypy.expose
-def left(self):
-    carEngine.left()
-    return index_html
-
-
-@cherrypy.expose
-def bothBackward(self):
-    carEngine.bothBackward()
-    return index_html
+    @cherrypy.expose
+    def bothBackward(self):
+        carEngine.bothBackward()
+        return index_html
 
 
 cherrypy.server.socket_host = '0.0.0.0'
+cherrypy.quickstart(motorController())
