@@ -41,6 +41,8 @@ leftMotor.start(0)
 # defyning sonar variables
 sonarIn = 21
 sonarOut = 20
+GPIO.setup(sonarOut,GPIO.OUT)
+GPIO.setup(sonarIn,GPIO.IN)
 
 # Sonar function
 
