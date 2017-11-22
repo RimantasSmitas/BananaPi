@@ -110,10 +110,10 @@ GPIO.setup(B, GPIO.IN)
 GPIO.setup(C, GPIO.IN)
 
 def getSensorA():
-    global A
+
     a = GPIO.input(A)
-    print(GPIO.input(A))
-    print(a)
+    print(GPIO.input(13))
+
     return a
 
 #sensor the middle
