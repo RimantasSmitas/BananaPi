@@ -3,20 +3,25 @@ import time
 import signal, os
 import atexit
 
+## The speed settings for the linefollow ex.
 defaultSpeed = 75
 defaultLSpeed = defaultSpeed
 defaultRSpeed = defaultSpeed - 2.2
 turnSpeedDifferenceLight = 11
 turnSpeedDifferenceHard = 13
+spinSpeedMultiplication = 0.3
+#
 
+
+#Setting variables for pins.
 PWMA = 2
 PWMB = 3
-
 AIN1 = 17
 AIN2 = 27
 BIN1 = 22
 BIN2 = 10
 
+#Setting up pins for motors. Making a pin cleanup in case there are settings left from previous program.
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
 GPIO.cleanup()
@@ -26,72 +31,91 @@ GPIO.setup(AIN1, GPIO.OUT)
 GPIO.setup(AIN2, GPIO.OUT)
 GPIO.setup(BIN1, GPIO.OUT)
 GPIO.setup(BIN2, GPIO.OUT)
-GPIO.setup(A, GPIO.IN)
-GPIO.setup(B, GPIO.IN)
-GPIO.setup(C, GPIO.IN)
 
+#Creating motor variables
 rightMotor = GPIO.PWM(PWMA, 50)
 leftMotor = GPIO.PWM(PWMB, 50)
 rightMotor.start(0)
 leftMotor.start(0)
 
-@atexit.register
-def goodbye():
-    GPIO.cleanup()
 
-def DriveR(rightMotorSpeed):
+#Setting variables and pins for sensors
+A = 13 # Right
+B = 6 # Middle
+C = 5 # Left
+GPIO.setup(A, GPIO.IN)
+GPIO.setup(B, GPIO.IN)
+GPIO.setup(C, GPIO.IN)
+
+#DriveFunctions
+def driveR(rightMotorSpeed):
     GPIO.output(AIN1, GPIO.HIGH)
     GPIO.output(AIN2, GPIO.LOW)
     rightMotor.ChangeDutyCycle(rightMotorSpeed)
 
-def DriveL(leftMotorSpeed):
+def driveL(leftMotorSpeed):
     GPIO.output(BIN1, GPIO.HIGH)
     GPIO.output(BIN2, GPIO.LOW)
     leftMotor.ChangeDutyCycle(leftMotorSpeed)
 
-def BackwardsR(rightMotorSpeed):
+def backwardsR(rightMotorSpeed):
     GPIO.output(AIN1, GPIO.LOW)
     GPIO.output(AIN2, GPIO.HIGH)
     rightMotor.ChangeDutyCycle(rightMotorSpeed)
 
-def BackwardsL(leftMotorSpeed):
+def backwardsL(leftMotorSpeed):
     GPIO.output(BIN1, GPIO.LOW)
     GPIO.output(BIN2, GPIO.HIGH)
     leftMotor.ChangeDutyCycle(leftMotorSpeed)
 
-def Left():
-    DriveR(defaultRSpeed+turnSpeedDifferenceLight)
-    DriveL(defaultLSpeed - turnSpeedDifferenceLight)
+def left():
+    driveR(defaultRSpeed+turnSpeedDifferenceLight)
+    driveL(defaultLSpeed - turnSpeedDifferenceLight)
 
-def HardLeft():
-    DriveR(defaultRSpeed+turnSpeedDifferenceHard)
-    DriveL(defaultLSpeed - turnSpeedDifferenceHard)
+def hardLeft():
+    driveR(defaultRSpeed+turnSpeedDifferenceHard)
+    driveL(defaultLSpeed - turnSpeedDifferenceHard)
 
-def Right():
-    DriveR(defaultRSpeed-turnSpeedDifferenceLight)
-    DriveL(defaultLSpeed + turnSpeedDifferenceLight)
+def right():
+    driveR(defaultRSpeed-turnSpeedDifferenceLight)
+    driveL(defaultLSpeed + turnSpeedDifferenceLight)
 
-def HardRight():
-    DriveR(defaultRSpeed-turnSpeedDifferenceHard)
-    DriveL(defaultLSpeed + turnSpeedDifferenceHard)
+def hardRight():
+    driveR(defaultRSpeed-turnSpeedDifferenceHard)
+    driveL(defaultLSpeed + turnSpeedDifferenceHard)
 
-def Forward():
-    DriveR(defaultRSpeed)
-    DriveL(defaultLSpeed)
+def forward():
+    driveR(defaultRSpeed)
+    driveL(defaultLSpeed)
 
-def BackwardsBoth():
-    BackwardsR(defaultRSpeed)
-    BackwardsL(defaultLSpeed)
+def backwardsBoth():
+    backwardsR(defaultRSpeed)
+    backwardsL(defaultLSpeed)
 
-def Stop():
+def stop():
     print ('Calling  stop')
-    DriveR(0)
-    DriveL(0)
+    driveR(0)
+    driveL(0)
 
 def spinLeft():
-    BackwardsL(defaultLSpeed/3)
-    DriveR(defaultRSpeed/3)
+    backwardsL(defaultLSpeed*spinSpeedMultiplication)
+    driveR(defaultRSpeed*spinSpeedMultiplication)
 
 def spinRight():
-    BackwardsR(defaultRSpeed/3)
-    DriveL(defaultLSpeed/3)
+    backwardsR(defaultRSpeed*spinSpeedMultiplication)
+    driveL(defaultLSpeed*spinSpeedMultiplication)
+
+#sensors
+def sensorA():
+    return GPIO.input(A)
+
+def sensorB():
+    return  GPIO.input(B)
+
+def sensorC():
+    return GPIO.input(C)
+
+@atexit.register
+def goodbye():
+    GPIO.cleanup()
+
