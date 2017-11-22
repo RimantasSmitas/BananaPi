@@ -39,13 +39,6 @@ rightMotor.start(0)
 leftMotor.start(0)
 
 
-#Setting variables and pins for sensors
-A = 13 # Right
-B = 6 # Middle
-C = 5 # Left
-GPIO.setup(A, GPIO.IN)
-GPIO.setup(B, GPIO.IN)
-GPIO.setup(C, GPIO.IN)
 
 #DriveFunctions
 def driveR(rightMotorSpeed):
@@ -107,7 +100,17 @@ def spinRight():
 
 #sensors
 #sensor on the right
+
+#Setting variables and pins for sensors
+A = 13 # Right
+B = 6 # Middle
+C = 5 # Left
+GPIO.setup(A, GPIO.IN)
+GPIO.setup(B, GPIO.IN)
+GPIO.setup(C, GPIO.IN)
+
 def getSensorA():
+    global A
     a = GPIO.input(A)
     print(GPIO.input(A))
     print(a)
