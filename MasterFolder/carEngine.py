@@ -110,14 +110,17 @@ def spinRight():
 def getSensorA():
     a=GPIO.input(A)
     return a
+    print(a)
 #sensor the middle
 def getSensorB():
     b=GPIO.input(B)
     return  b
+    print(b)
 #sensor on the left
 def getSensorC():
     c=GPIO.input(C)
     return c
+    print(c)
 def getSonar():
     return
 
