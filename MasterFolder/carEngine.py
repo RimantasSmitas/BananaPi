@@ -38,70 +38,109 @@ leftMotor = GPIO.PWM(PWMB, 50)
 rightMotor.start(0)
 leftMotor.start(0)
 
+# defyning sonar variables
+sonarIn = 21
+sonarOut = 20
 
+# Sonar function
+def findEnemyDistance(sensor):
+    pingtime = 0
+    echotime = 0
+    if sensor == 0:
+        GPIO.output(sonarOut,GPIO.LOW)
+        GPIO.output(sonarOut,GPIO.HIGH)
+        pingtime=time.time()
+        time.sleep(0.00001)
+        GPIO.output(sonarOut,GPIO.LOW)
+        while GPIO.input(sonarIn)==0:
+            pingtime = time.time()
+        while GPIO.input(sonarIn)==1:
+            echotime=time.time()
+        if (echotime is not None) and (pingtime is not None):
+            elapsedtime = echotime - pingtime
+            distance = elapsedtime * 17000
+        else:
+            distance = 0
+        print(pingtime)
+        print(echotime)
+        return distance
 
 #DriveFunctions
+
+
 def driveR(rightMotorSpeed):
     GPIO.output(AIN1, GPIO.HIGH)
     GPIO.output(AIN2, GPIO.LOW)
     rightMotor.ChangeDutyCycle(rightMotorSpeed)
+
 
 def driveL(leftMotorSpeed):
     GPIO.output(BIN1, GPIO.HIGH)
     GPIO.output(BIN2, GPIO.LOW)
     leftMotor.ChangeDutyCycle(leftMotorSpeed)
 
+
 def backwardsR(rightMotorSpeed):
     GPIO.output(AIN1, GPIO.LOW)
     GPIO.output(AIN2, GPIO.HIGH)
     rightMotor.ChangeDutyCycle(rightMotorSpeed)
+
 
 def backwardsL(leftMotorSpeed):
     GPIO.output(BIN1, GPIO.LOW)
     GPIO.output(BIN2, GPIO.HIGH)
     leftMotor.ChangeDutyCycle(leftMotorSpeed)
 
+
 def left():
     driveR(defaultRSpeed+turnSpeedDifferenceLight)
     driveL(defaultLSpeed - turnSpeedDifferenceLight)
+
 
 def hardLeft():
     driveR(defaultRSpeed+turnSpeedDifferenceHard)
     driveL(defaultLSpeed - turnSpeedDifferenceHard)
 
+
 def right():
     driveR(defaultRSpeed-turnSpeedDifferenceLight)
     driveL(defaultLSpeed + turnSpeedDifferenceLight)
+
 
 def hardRight():
     driveR(defaultRSpeed-turnSpeedDifferenceHard)
     driveL(defaultLSpeed + turnSpeedDifferenceHard)
 
+
 def forward():
     driveR(defaultRSpeed)
     driveL(defaultLSpeed)
 
+
 def backwardsBoth():
     backwardsR(defaultRSpeed)
     backwardsL(defaultLSpeed)
+
 
 def stop():
     print ('Calling  stop')
     driveR(0)
     driveL(0)
 
+
 def spinLeft():
     backwardsL(defaultLSpeed*spinSpeedMultiplication)
     driveR(defaultRSpeed*spinSpeedMultiplication)
+
 
 def spinRight():
     backwardsR(defaultRSpeed*spinSpeedMultiplication)
     driveL(defaultLSpeed*spinSpeedMultiplication)
 
-#sensors
-#sensor on the right
+# sensors
+# sensor on the right
 
-#Setting variables and pins for sensors
+# Setting variables and pins for sensors
 A = 13 # Right
 B = 6 # Middle
 C = 5 # Left
@@ -112,18 +151,25 @@ GPIO.setup(C, GPIO.IN)
 def getSensorA():
     return GPIO.input(A)
 
-#sensor the middle
+# sensor the middle
+
+
 def getSensorB():
     b = GPIO.input(B)
-    return  b
+    return b
     print(b)
-#sensor on the left
+# sensor on the left
+
+
 def getSensorC():
     c = GPIO.input(C)
     return c
     print(c)
+
+
 def getSonar():
     return
+
 
 @atexit.register
 def goodbye():
