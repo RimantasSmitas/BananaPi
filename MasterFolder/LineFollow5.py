@@ -2,10 +2,10 @@ import RPi.GPIO as GPIO
 import time
 import signal, os
 import atexit
+
 import sys
 sys.path.insert(0, '/home/pi/robocar/MasterFolder')
 import carEngine
-
 
 A = 13 # Right
 B = 6 # Middle
@@ -14,8 +14,6 @@ C = 5 # Left
 GPIO.setup(A, GPIO.IN)
 GPIO.setup(B, GPIO.IN)
 GPIO.setup(C, GPIO.IN)
-
-
 
 def lineFollow():
     while True:

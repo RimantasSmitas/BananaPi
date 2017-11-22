@@ -3,8 +3,9 @@ import time
 import signal, os
 import atexit
 
-defaultLSpeed = 75
-defaultRSpeed = 72.8
+defaultSpeed = 75
+defaultLSpeed = defaultSpeed
+defaultRSpeed = defaultSpeed - 2.2
 turnSpeedDifferenceLight = 11
 turnSpeedDifferenceHard = 13
 
@@ -15,12 +16,6 @@ AIN1 = 17
 AIN2 = 27
 BIN1 = 22
 BIN2 = 10
-
-#Pins for sensors
-A = 13 # Right
-B = 6 # Middle
-C = 5 # Left
-
 
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
@@ -68,21 +63,17 @@ def Left():
     DriveR(defaultRSpeed+turnSpeedDifferenceLight)
     DriveL(defaultLSpeed - turnSpeedDifferenceLight)
 
-
 def HardLeft():
     DriveR(defaultRSpeed+turnSpeedDifferenceHard)
     DriveL(defaultLSpeed - turnSpeedDifferenceHard)
-
 
 def Right():
     DriveR(defaultRSpeed-turnSpeedDifferenceLight)
     DriveL(defaultLSpeed + turnSpeedDifferenceLight)
 
-
 def HardRight():
     DriveR(defaultRSpeed-turnSpeedDifferenceHard)
     DriveL(defaultLSpeed + turnSpeedDifferenceHard)
-
 
 def Forward():
     DriveR(defaultRSpeed)
@@ -96,7 +87,6 @@ def Stop():
     print ('Calling  stop')
     DriveR(0)
     DriveL(0)
-
 
 def spinLeft():
     BackwardsL(defaultLSpeed/3)
