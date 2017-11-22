@@ -106,14 +106,20 @@ def spinRight():
     driveL(defaultLSpeed*spinSpeedMultiplication)
 
 #sensors
-def sensorA():
+#sensor on the right
+def getSensorA():
     return GPIO.input(A)
 
-def sensorB():
+#sensor the middle
+def getSensorB():
     return  GPIO.input(B)
 
-def sensorC():
+#sensor on the left
+def getSensorC():
     return GPIO.input(C)
+
+def getSonar():
+    return
 
 @atexit.register
 def goodbye():
