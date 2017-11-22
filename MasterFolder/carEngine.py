@@ -61,19 +61,19 @@ def backwardsL(leftMotorSpeed):
     GPIO.output(BIN2, GPIO.HIGH)
     leftMotor.ChangeDutyCycle(leftMotorSpeed)
 
-def left():
+def right():
     driveR(defaultRSpeed+turnSpeedDifferenceLight)
     driveL(defaultLSpeed - turnSpeedDifferenceLight)
 
-def hardLeft():
+def hardRight():
     driveR(defaultRSpeed+turnSpeedDifferenceHard)
     driveL(defaultLSpeed - turnSpeedDifferenceHard)
 
-def right():
+def left():
     driveR(defaultRSpeed-turnSpeedDifferenceLight)
     driveL(defaultLSpeed + turnSpeedDifferenceLight)
 
-def hardRight():
+def hardLeft():
     driveR(defaultRSpeed-turnSpeedDifferenceHard)
     driveL(defaultLSpeed + turnSpeedDifferenceHard)
 
@@ -102,9 +102,9 @@ def spinRight():
 #sensor on the right
 
 #Setting variables and pins for sensors
-A = 13 # Right
+A = 5 # Right
 B = 6 # Middle
-C = 5 # Left
+C = 13 # Left
 GPIO.setup(A, GPIO.IN)
 GPIO.setup(B, GPIO.IN)
 GPIO.setup(C, GPIO.IN)
