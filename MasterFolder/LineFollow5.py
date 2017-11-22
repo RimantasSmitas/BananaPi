@@ -11,32 +11,28 @@ SLEEPTIMER = 0.005
 
 
 
-GPIO.setup(A, GPIO.IN)
-GPIO.setup(B, GPIO.IN)
-GPIO.setup(C, GPIO.IN)
-
 def lineFollow():
     while True:
-        print(GPIO.input(A), GPIO.input(B), GPIO.input(C))
-        if  GPIO.input(A)==1 and GPIO.input(B)==0 and GPIO.input(C)==0:
+       # print(carEngine.getSensorA, carEngine.getSensorB, carEngine.getSensorC)
+        if carEngine.getSensorA()==1 and carEngine.getSensorB()==0 and carEngine.getSensorB()==0:
             carEngine.spinLeft()
             print("Spin Left")
-        elif GPIO.input(A)==1 and GPIO.input(B)==1 and GPIO.input(C)==0:
+        elif carEngine.getSensorA()==1 and carEngine.getSensorB()==1 and carEngine.getSensorC()==0:
             carEngine.Left()
             print("Left")
-        elif GPIO.input(A)==0 and GPIO.input(B)==0 and GPIO.input(C)==1:
+        elif carEngine.getSensorA()==0 and carEngine.getSensorB()==0 and carEngine.getSensorC()==1:
             carEngine.spinRight()
             print("Spin Right")
-        elif GPIO.input(A)==0 and GPIO.input(B)==1 and GPIO.input(C)==1:
+        elif carEngine.getSensorA()==0 and carEngine.getSensorB()==1 and carEngine.getSensorC()==1:
             carEngine.Right()
             print("Right")
-        elif GPIO.input(A)==0 and GPIO.input(B)==1 and GPIO.input(C)==0:
+        elif carEngine.getSensorA()==0 and carEngine.getSensorB()==1 and carEngine.getSensorC()==0:
             carEngine.Forward()
             print("Forward")
-        elif GPIO.input(A)==1 and GPIO.input(B)==1 and GPIO.input(C)==1:
+        elif carEngine.getSensorA()==1 and carEngine.getSensorB()==1 and carEngine.getSensorC()==1:
             carEngine.Forward()
             print("Forward")
-        elif GPIO.input(A)==0 and GPIO.input(B)==0 and GPIO.input(C)==0:
+        elif carEngine.getSensorA()==0 and carEngine.getSensorB()==0 and carEngine.getSensorC()==0:
             carEngine.BackwardsBoth()
         time.sleep(SLEEPTIMER)
 

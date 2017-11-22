@@ -39,13 +39,6 @@ rightMotor.start(0)
 leftMotor.start(0)
 
 
-#Setting variables and pins for sensors
-A = 13 # Right
-B = 6 # Middle
-C = 5 # Left
-GPIO.setup(A, GPIO.IN)
-GPIO.setup(B, GPIO.IN)
-GPIO.setup(C, GPIO.IN)
 
 #DriveFunctions
 def driveR(rightMotorSpeed):
@@ -106,14 +99,35 @@ def spinRight():
     driveL(defaultLSpeed*spinSpeedMultiplication)
 
 #sensors
-def sensorA():
-    return GPIO.input(A)
+#sensor on the right
 
-def sensorB():
-    return  GPIO.input(B)
+#Setting variables and pins for sensors
+A = 13 # Right
+B = 6 # Middle
+C = 5 # Left
+GPIO.setup(A, GPIO.IN)
+GPIO.setup(B, GPIO.IN)
+GPIO.setup(C, GPIO.IN)
 
-def sensorC():
-    return GPIO.input(C)
+def getSensorA():
+    print("Message")
+    a = GPIO.input(A)
+    print(GPIO.input(13))
+
+    return a
+
+#sensor the middle
+def getSensorB():
+    b = GPIO.input(B)
+    return  b
+    print(b)
+#sensor on the left
+def getSensorC():
+    c = GPIO.input(C)
+    return c
+    print(c)
+def getSonar():
+    return
 
 @atexit.register
 def goodbye():
