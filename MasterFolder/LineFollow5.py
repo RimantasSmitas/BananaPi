@@ -7,13 +7,13 @@ import sys
 sys.path.insert(0, '/home/pi/robocar/MasterFolder')
 import carEngine
 
-SLEEPTIMER = 0.005
+sleeptimer = 0.005
 
 
 
 def lineFollow():
     while True:
-       # print(carEngine.getSensorA, carEngine.getSensorB, carEngine.getSensorC)
+        print(carEngine.getSensorA, carEngine.getSensorB, carEngine.getSensorC)
         if carEngine.getSensorA()==1 and carEngine.getSensorB()==0 and carEngine.getSensorB()==0:
             carEngine.spinLeft()
             print("Spin Left")
@@ -34,6 +34,6 @@ def lineFollow():
             print("Forward")
         elif carEngine.getSensorA()==0 and carEngine.getSensorB()==0 and carEngine.getSensorC()==0:
             carEngine.backwardsBoth()
-        time.sleep(SLEEPTIMER)
+        time.sleep(sleeptimer)
 
 lineFollow()
