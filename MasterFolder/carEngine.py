@@ -7,7 +7,7 @@ import atexit
 defaultSpeed = 75
 defaultLSpeed = defaultSpeed -1.5
 defaultRSpeed = defaultSpeed
-turnSpeedDifferenceLight = 20
+turnSpeedDifferenceLight = 25
 turnSpeedDifferenceHard = 25
 spinSpeedMultiplication = 0.25
 #
