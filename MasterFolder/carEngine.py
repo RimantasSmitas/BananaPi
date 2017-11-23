@@ -6,7 +6,7 @@ import atexit
 ## The speed settings for the linefollow ex.
 defaultSpeed = 75
 defaultLSpeed = defaultSpeed
-defaultRSpeed = defaultSpeed - 2.2
+defaultRSpeed = defaultSpeed - 1.5
 turnSpeedDifferenceLight = 11
 turnSpeedDifferenceHard = 25
 spinSpeedMultiplication = 0.3
