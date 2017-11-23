@@ -3,15 +3,6 @@ import time
 import signal, os
 import atexit
 
-## The speed settings for the linefollow ex.
-defaultSpeed = 90
-defaultLSpeed = defaultSpeed -1.5
-defaultRSpeed = defaultSpeed
-turnSpeedDifferenceLight = 40
-turnSpeedDifferenceHard = 25
-spinSpeedMultiplication = 0.25
-#
-
 
 #Setting variables for pins.
 PWMA = 2
