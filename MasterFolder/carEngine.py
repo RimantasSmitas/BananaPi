@@ -86,22 +86,22 @@ def backwardsL(leftMotorSpeed):
     leftMotor.ChangeDutyCycle(leftMotorSpeed)
 
 
-def left(defaultRSpeed,defaultLSpeed):
+def left(defaultRSpeed,defaultLSpeed,turnSpeedDifferenceLight):
     driveR(defaultRSpeed+10)#+turnSpeedDifferenceLight)
     driveL(defaultLSpeed - turnSpeedDifferenceLight)
 
 
-def hardLeft(defaultRSpeed,defaultLSpeed):
+def hardLeft(defaultRSpeed,defaultLSpeed,turnSpeedDifferenceHard):
     driveR(defaultRSpeed+turnSpeedDifferenceHard)
     driveL(defaultLSpeed - turnSpeedDifferenceHard)
 
 
-def right(defaultRSpeed, defaultLSpeed):
+def right(defaultRSpeed, defaultLSpeed, turnSpeedDifferenceLight):
     driveR(defaultRSpeed-turnSpeedDifferenceLight)
     driveL(defaultLSpeed+10)# turnSpeedDifferenceLight)
 
 
-def hardRight(defaultRSpeed,defaultLSpeed):
+def hardRight(defaultRSpeed,defaultLSpeed,turnSpeedDifferenceHard):
     driveR(defaultRSpeed-turnSpeedDifferenceHard)
     driveL(defaultLSpeed + turnSpeedDifferenceHard)
 
