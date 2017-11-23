@@ -33,8 +33,6 @@ def charge():
     else:
         escapeBack()
 
-# Checking the sensors around the car
-
 
 def sensorsFrontClean():
     if carEngine.getSensorA() == 0 and carEngine.getSensorB() == 0 and carEngine.getSensorC() == 0:
