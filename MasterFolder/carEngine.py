@@ -4,7 +4,7 @@ import signal, os
 import atexit
 
 ## The speed settings for the linefollow ex.
-defaultSpeed = 75
+defaultSpeed = 65
 defaultLSpeed = defaultSpeed
 defaultRSpeed = defaultSpeed - 1.5
 turnSpeedDifferenceLight = 11
