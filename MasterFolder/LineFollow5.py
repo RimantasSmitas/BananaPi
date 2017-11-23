@@ -29,7 +29,7 @@ def lineFollow():
         elif carEngine.getSensorA()==0 and carEngine.getSensorB()==0 and carEngine.getSensorC()==1:
             carEngine.spinRight()
             print("Hard Right")
-        elif carEngine.getSensorA()==0 and carEngine.getSensorB()==1 and carEngine.getSensorC()==1:
+        elif carEngine.getSensorA()== 0 and carEngine.getSensorB()==1 and carEngine.getSensorC()==1:
             carEngine.right()
             print("Right")
         elif carEngine.getSensorA()==0 and carEngine.getSensorB()==1 and carEngine.getSensorC()==0:
