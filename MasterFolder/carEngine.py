@@ -111,17 +111,17 @@ def right(defaultRSpeed, defaultLSpeed):
     driveL(defaultLSpeed+10)# turnSpeedDifferenceLight)
 
 
-def hardRight(defaultRSpeed,defaulLSpeed):
+def hardRight(defaultRSpeed,defaultLSpeed):
     driveR(defaultRSpeed-turnSpeedDifferenceHard)
     driveL(defaultLSpeed + turnSpeedDifferenceHard)
 
 
-def forward():
+def forward(defaultRSpeed,defaultLSpeed):
     driveR(defaultRSpeed)
     driveL(defaultLSpeed)
 
 
-def backwardsBoth():
+def backwardsBoth(defaultRSpeed,defaultLSpeed):
     backwardsR(defaultRSpeed)
     backwardsL(defaultLSpeed)
 
@@ -132,12 +132,12 @@ def stop():
     driveL(0)
 
 
-def spinLeft():
+def spinLeft(defaultRSpeed,defaultLSpeed,spinSpeedMultiplication):
     backwardsL(defaultLSpeed*spinSpeedMultiplication)
     driveR(defaultRSpeed*spinSpeedMultiplication)
 
 
-def spinRight():
+def spinRight(defaultRSpeed,defaultLSpeed,spinSpeedMultiplication):
     backwardsR(defaultRSpeed*spinSpeedMultiplication)
     driveL(defaultLSpeed*spinSpeedMultiplication)
 
