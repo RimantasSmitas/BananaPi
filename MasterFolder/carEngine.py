@@ -112,8 +112,8 @@ def right():
 
 
 def hardRight():
-    driveR(defaultRSpeed+turnSpeedDifferenceHard)
-    driveL(defaultLSpeed - turnSpeedDifferenceHard)
+    driveR(defaultRSpeed-turnSpeedDifferenceHard)
+    driveL(defaultLSpeed + turnSpeedDifferenceHard)
 
 
 def forward():
