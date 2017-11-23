@@ -15,13 +15,13 @@ def lineFollow():
     while True:
         print(carEngine.getSensorA(), carEngine.getSensorB(), carEngine.getSensorC())
         if carEngine.getSensorA()==1 and carEngine.getSensorB()==0 and carEngine.getSensorB()==0:
-            carEngine.hardLeft()
+            carEngine.spinLeft()
             print("Hard Left")
         elif carEngine.getSensorA()==1 and carEngine.getSensorB()==1 and carEngine.getSensorC()==0:
             carEngine.left()
             print("Left")
         elif carEngine.getSensorA()==0 and carEngine.getSensorB()==0 and carEngine.getSensorC()==1:
-            carEngine.hardRight()
+            carEngine.spinRight()
             print("Hard Right")
         elif carEngine.getSensorA()==0 and carEngine.getSensorB()==1 and carEngine.getSensorC()==1:
             carEngine.right()
