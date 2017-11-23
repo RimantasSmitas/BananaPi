@@ -4,12 +4,12 @@ import signal, os
 import atexit
 
 ## The speed settings for the linefollow ex.
-defaultSpeed = 75
-defaultLSpeed = defaultSpeed
-defaultRSpeed = defaultSpeed - 2.2
-turnSpeedDifferenceLight = 11
+defaultSpeed = 85
+defaultLSpeed = defaultSpeed -1.5
+defaultRSpeed = defaultSpeed
+turnSpeedDifferenceLight = 30
 turnSpeedDifferenceHard = 25
-spinSpeedMultiplication = 0.3
+spinSpeedMultiplication = 0.25
 #
 
 
@@ -97,7 +97,7 @@ def backwardsL(leftMotorSpeed):
 
 
 def left():
-    driveR(defaultRSpeed+turnSpeedDifferenceLight)
+    driveR(defaultRSpeed+10)#+turnSpeedDifferenceLight)
     driveL(defaultLSpeed - turnSpeedDifferenceLight)
 
 
@@ -108,7 +108,7 @@ def hardLeft():
 
 def right():
     driveR(defaultRSpeed-turnSpeedDifferenceLight)
-    driveL(defaultLSpeed + turnSpeedDifferenceLight)
+    driveL(defaultLSpeed+10)# turnSpeedDifferenceLight)
 
 
 def hardRight():
