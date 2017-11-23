@@ -111,7 +111,7 @@ def right(defaultRSpeed, defaultLSpeed):
     driveL(defaultLSpeed+10)# turnSpeedDifferenceLight)
 
 
-def hardRight(de):
+def hardRight(defaultRSpeed,defaulLSpeed):
     driveR(defaultRSpeed-turnSpeedDifferenceHard)
     driveL(defaultLSpeed + turnSpeedDifferenceHard)
 
