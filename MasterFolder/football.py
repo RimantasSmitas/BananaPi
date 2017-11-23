@@ -27,6 +27,13 @@ GPIO.setup(AIN2, GPIO.OUT)
 GPIO.setup(BIN1, GPIO.OUT)
 GPIO.setup(BIN2, GPIO.OUT)
 
+defaultSpeed = 90
+defaultLSpeed = defaultSpeed -1.5
+defaultRSpeed = defaultSpeed
+turnSpeedDifferenceLight = 40
+turnSpeedDifferenceHard = 25
+spinSpeedMultiplication = 0.25
+
 
 @atexit.register
 def goodbye():
@@ -40,7 +47,7 @@ class motorController:
 
     @cherrypy.expose
     def forward(self):
-        carEngine.forward()
+        carEngine.forward(defaultRSpeed, defaultLSpeed)
         return index_html
 
     @cherrypy.expose
@@ -50,17 +57,17 @@ class motorController:
 
     @cherrypy.expose
     def right(self):
-        carEngine.right()
+        carEngine.right(defaultRSpeed, defaultLSpeed)
         return index_html
 
     @cherrypy.expose
     def left(self):
-        carEngine.left()
+        carEngine.left(defaultRSpeed, defaultLSpeed)
         return index_html
 
     @cherrypy.expose
     def backwardsBoth(self):
-        carEngine.backwardsBoth()
+        carEngine.backwardsBoth(defaultRSpeed, defaultLSpeed)
         return index_html
 
 
