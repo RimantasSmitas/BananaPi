@@ -21,25 +21,25 @@ def lineFollow():
     while True:
         print(carEngine.getSensorA(), carEngine.getSensorB(), carEngine.getSensorC())
         if carEngine.getSensorA()==1 and carEngine.getSensorB()==0 and carEngine.getSensorB()==0:
-            carEngine.spinLeft()
-            print("Hard Left")
+            carEngine.spinLeft(defaultRSpeed,defaultLSpeed,spinSpeedMultiplication)
+            print("Spin Left")
         elif carEngine.getSensorA()==1 and carEngine.getSensorB()==1 and carEngine.getSensorC()==0:
-            carEngine.left()
+            carEngine.left(defaultRSpeed,defaultLSpeed)
             print("Left")
         elif carEngine.getSensorA()==0 and carEngine.getSensorB()==0 and carEngine.getSensorC()==1:
-            carEngine.spinRight()
-            print("Hard Right")
+            carEngine.spinRight(defaultRSpeed,defaultLSpeed,spinSpeedMultiplication)
+            print("Spin Right")
         elif carEngine.getSensorA()==0 and carEngine.getSensorB()==1 and carEngine.getSensorC()==1:
-            carEngine.right()
+            carEngine.right(defaultRSpeed, defaultLSpeed)
             print("Right")
         elif carEngine.getSensorA()==0 and carEngine.getSensorB()==1 and carEngine.getSensorC()==0:
-            carEngine.forward()
+            carEngine.forward(defaultRSpeed,defaultLSpeed)
             print("Forward")
         elif carEngine.getSensorA()==1 and carEngine.getSensorB()==1 and carEngine.getSensorC()==1:
-            carEngine.forward()
+            carEngine.forward(defaultRSpeed,defaultLSpeed)
             print("Forward")
         elif carEngine.getSensorA()==0 and carEngine.getSensorB()==0 and carEngine.getSensorC()==0:
-            carEngine.backwardsBoth()
+            carEngine.backwardsBoth(defaultRSpeed,defaultLSpeed)
         time.sleep(sleeptimer)
 
 lineFollow()
