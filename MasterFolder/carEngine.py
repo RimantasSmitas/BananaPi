@@ -61,24 +61,20 @@ def findEnemyDistance(sensor):
 
 #DriveFunctions
 
-
 def driveR(rightMotorSpeed):
     GPIO.output(AIN1, GPIO.HIGH)
     GPIO.output(AIN2, GPIO.LOW)
     rightMotor.ChangeDutyCycle(rightMotorSpeed)
-
 
 def driveL(leftMotorSpeed):
     GPIO.output(BIN1, GPIO.HIGH)
     GPIO.output(BIN2, GPIO.LOW)
     leftMotor.ChangeDutyCycle(leftMotorSpeed)
 
-
 def backwardsR(rightMotorSpeed):
     GPIO.output(AIN1, GPIO.LOW)
     GPIO.output(AIN2, GPIO.HIGH)
     rightMotor.ChangeDutyCycle(rightMotorSpeed)
-
 
 def backwardsL(leftMotorSpeed):
     GPIO.output(BIN1, GPIO.LOW)
@@ -90,16 +86,13 @@ def left(defaultRSpeed,defaultLSpeed,turnSpeedDifferenceLight):
     driveR(defaultRSpeed+10)#+turnSpeedDifferenceLight)
     driveL(defaultLSpeed - turnSpeedDifferenceLight)
 
-
 def hardLeft(defaultRSpeed,defaultLSpeed,turnSpeedDifferenceHard):
     driveR(defaultRSpeed+turnSpeedDifferenceHard)
     driveL(defaultLSpeed - turnSpeedDifferenceHard)
 
-
 def right(defaultRSpeed, defaultLSpeed, turnSpeedDifferenceLight):
     driveR(defaultRSpeed-turnSpeedDifferenceLight)
     driveL(defaultLSpeed+10)# turnSpeedDifferenceLight)
-
 
 def hardRight(defaultRSpeed,defaultLSpeed,turnSpeedDifferenceHard):
     driveR(defaultRSpeed-turnSpeedDifferenceHard)

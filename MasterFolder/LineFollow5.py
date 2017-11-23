@@ -24,13 +24,13 @@ def lineFollow():
             carEngine.spinLeft(defaultRSpeed,defaultLSpeed,spinSpeedMultiplication)
             print("Spin Left")
         elif carEngine.getSensorA()==1 and carEngine.getSensorB()==1 and carEngine.getSensorC()==0:
-            carEngine.left(defaultRSpeed,defaultLSpeed)
+            carEngine.left(defaultRSpeed,defaultLSpeed,turnSpeedDifferenceLight)
             print("Left")
         elif carEngine.getSensorA()==0 and carEngine.getSensorB()==0 and carEngine.getSensorC()==1:
             carEngine.spinRight(defaultRSpeed,defaultLSpeed,spinSpeedMultiplication)
             print("Spin Right")
         elif carEngine.getSensorA()==0 and carEngine.getSensorB()==1 and carEngine.getSensorC()==1:
-            carEngine.right(defaultRSpeed, defaultLSpeed)
+            carEngine.right(defaultRSpeed, defaultLSpeed, turnSpeedDifferenceLight)
             print("Right")
         elif carEngine.getSensorA()==0 and carEngine.getSensorB()==1 and carEngine.getSensorC()==0:
             carEngine.forward(defaultRSpeed,defaultLSpeed)
