@@ -7,7 +7,7 @@ import sys
 sys.path.insert(0, '/home/pi/robocar/MasterFolder')
 import carEngine
 
-sleeptimer = 0.001
+sleeptimer = 0.002
 
 
 
