@@ -97,7 +97,7 @@ def backwardsL(leftMotorSpeed):
 
 
 def left():
-    driveR(defaultRSpeed+turnSpeedDifferenceLight)
+    driveR(defaultRSpeed+10)#+turnSpeedDifferenceLight)
     driveL(defaultLSpeed - turnSpeedDifferenceLight)
 
 
@@ -108,7 +108,7 @@ def hardLeft():
 
 def right():
     driveR(defaultRSpeed-turnSpeedDifferenceLight)
-    driveL(defaultLSpeed + turnSpeedDifferenceLight)
+    driveL(defaultLSpeed+10)# turnSpeedDifferenceLight)
 
 
 def hardRight():
