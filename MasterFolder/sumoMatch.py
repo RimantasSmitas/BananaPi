@@ -9,10 +9,18 @@ import carEngine
 
 # Fighting functions
 
+efaultSpeed = 90
+defaultLSpeed = defaultSpeed -1.5
+defaultRSpeed = defaultSpeed
+turnSpeedDifferenceLight = 40
+turnSpeedDifferenceHard = 25
+spinSpeedMultiplication = 0.25
+
+
 
 def escapeBack():
     print("Escaping to the back.")
-    carEngine.backwardsBoth()
+    carEngine.backwardsBoth(defaultRSpeed, defaultLSpeed)
     time.sleep(1)
     carEngine.stop()
 
@@ -20,7 +28,7 @@ def escapeBack():
 def charge():
     print("Charge forward")
     if sensorsFrontClean:
-        carEngine.forward()
+        carEngine.forward(defaultRSpeed, defaultLSpeed)
         time.sleep(0.05)
     else:
         escapeBack()
@@ -47,13 +55,13 @@ def lookForEnemy():
         escapeBack()
     elif sensorBackClean() is False:
         print("Sensors BACK are not clean, going front")
-        carEngine.forward()
+        carEngine.forward(defaultRSpeed, defaultLSpeed)
         time.sleep(0.5)
         carEngine.stop()
     else:
         if range > 50:
             print("Range is ", range, " spinning left.")
-            carEngine.spinLeft()
+            carEngine.spinLeft(defaultRSpeed, defaultLSpeed, spinSpeedMultiplication)
         elif range < 50:
             print("Range is ", range, "CHARGING.")
             charge()
