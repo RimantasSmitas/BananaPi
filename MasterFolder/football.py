@@ -57,12 +57,12 @@ class motorController:
 
     @cherrypy.expose
     def right(self):
-        carEngine.right(defaultRSpeed, defaultLSpeed)
+        carEngine.right(defaultRSpeed, defaultLSpeed, turnSpeedDifferenceLight)
         return index_html
 
     @cherrypy.expose
     def left(self):
-        carEngine.left(defaultRSpeed, defaultLSpeed)
+        carEngine.left(defaultRSpeed,defaultLSpeed,turnSpeedDifferenceLight)
         return index_html
 
     @cherrypy.expose
