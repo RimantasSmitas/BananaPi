@@ -9,7 +9,7 @@ import carEngine
 
 # Fighting functions
 
-defaultSpeed = 60
+defaultSpeed = 50
 defaultLSpeed = defaultSpeed -1.5
 defaultRSpeed = defaultSpeed
 turnSpeedDifferenceLight = 40
@@ -59,6 +59,7 @@ def lookForEnemy():
     else:
         if range > 50:
             print("Range is ", range, " spinning left.")
+
             carEngine.spinLeft(defaultRSpeed, defaultLSpeed, spinSpeedMultiplication)
         elif range < 50:
             print("Range is ", range, "CHARGING.")
