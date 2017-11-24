@@ -28,8 +28,8 @@ GPIO.setup(BIN1, GPIO.OUT)
 GPIO.setup(BIN2, GPIO.OUT)
 
 defaultSpeed = 90
-defaultLSpeed = defaultSpeed - 40
-defaultRSpeed = defaultSpeed
+defaultLSpeed = defaultSpeed
+defaultRSpeed = defaultSpeed - 10
 turnSpeedDifferenceLight = 40
 turnSpeedDifferenceHard = 25
 spinSpeedMultiplication = 0.25
