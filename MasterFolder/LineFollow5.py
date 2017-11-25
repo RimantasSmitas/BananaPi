@@ -9,8 +9,8 @@ import carEngine
 
 sleeptimer = 0.002
 defaultSpeed = 85
-defaultLSpeed = defaultSpeed -1.5
-defaultRSpeed = defaultSpeed
+defaultLSpeed = defaultSpeed
+defaultRSpeed = defaultSpeed -2.4
 turnSpeedDifferenceLight = 40
 turnSpeedDifferenceHard = 25
 spinSpeedMultiplication = 0.15
