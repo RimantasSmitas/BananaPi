@@ -75,7 +75,6 @@ class motorController:
         carEngine.forward(defaultRSpeed, defaultLSpeed)
         return index_html
 
-
     @cherrypy.expose
     def backwardsBoth(self):
         carEngine.backwardsBoth(defaultRSpeed, defaultLSpeed)
