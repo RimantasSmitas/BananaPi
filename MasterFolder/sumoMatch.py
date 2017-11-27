@@ -41,7 +41,7 @@ def sensorsFrontClean():
 def aBitForward():
     for number in range(1, 10):
         if sensorsFrontClean:
-            carEngine.forward(efaultRSpeed, defaultLSpeed)
+            carEngine.forward(defaultRSpeed, defaultLSpeed)
         else:
             break
 
