@@ -21,7 +21,7 @@ spinSpeedMultiplication = 0.25
 def escapeBack():
     print("Escaping to the back.")
     carEngine.backwardsBoth(defaultRSpeed, defaultLSpeed)
-    time.sleep(0.5)
+    time.sleep(0.3)
     carEngine.stop()
 
 
@@ -53,8 +53,7 @@ def lookForEnemy():
         escapeBack()
     elif sensorBackClean() is False:
         print("Sensors BACK are not clean, going front")
-        carEngine.forward(defaultRSpeed, defaultLSpeed)
-        time.sleep(0.5)
+        charge()
         carEngine.stop()
     else:
         if range > 50:
