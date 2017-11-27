@@ -61,14 +61,14 @@ def lookForEnemy():
         print("Sensors BACK are not clean, going front")
         aBitForward()
     else:
-        if range > 70:
+        if range > 60:
             print("Range is ", range, " spinning left.")
             carEngine.spinLeft(defaultRSpeed, defaultLSpeed, spinSpeedMultiplication)
-        elif range < 70:
+        elif range < 60:
             print("Range is ", range, "CHARGING.")
             charge()
 
 
 while True:
     lookForEnemy()
-    time.sleep(.05)
+    time.sleep(.005)
