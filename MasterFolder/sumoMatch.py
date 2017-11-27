@@ -23,10 +23,6 @@ def escapeBack():
     carEngine.backwardsBoth(defaultRSpeed, defaultLSpeed)
     time.sleep(0.3)
     carEngine.stop()
-    carEngine.spinLeft(defaultRSpeed, defaultLSpeed, spinSpeedMultiplication)
-    time.sleep(0.5)
-
-
 
 def charge():
     print("Charge forward")
