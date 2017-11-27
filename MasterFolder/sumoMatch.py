@@ -45,6 +45,7 @@ def aBitForward():
         else:
             break
 
+
 def sensorBackClean():
     if carEngine.getSensorD() == 0:
         return True
@@ -60,10 +61,10 @@ def lookForEnemy():
         print("Sensors BACK are not clean, going front")
         aBitForward()
     else:
-        if range > 50:
+        if range > 70:
             print("Range is ", range, " spinning left.")
             carEngine.spinLeft(defaultRSpeed, defaultLSpeed, spinSpeedMultiplication)
-        elif range < 50:
+        elif range < 70:
             print("Range is ", range, "CHARGING.")
             charge()
 
