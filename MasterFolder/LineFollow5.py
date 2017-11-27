@@ -41,7 +41,6 @@ def lineFollow():
         elif carEngine.getSensorA()==0 and carEngine.getSensorB()==0 and carEngine.getSensorC()==0:
             carEngine.backwardsBoth(defaultRSpeed,defaultLSpeed)
             print("Backward")
-            time.sleep(0.25)
         time.sleep(sleeptimer)
 
 lineFollow()
