@@ -24,7 +24,7 @@ def escapeBack():
     time.sleep(0.3)
     carEngine.stop()
     carEngine.spinLeft(defaultRSpeed, defaultLSpeed, spinSpeedMultiplication)
-    time.sleep(0.3)
+    time.sleep(0.5)
 
 
 
