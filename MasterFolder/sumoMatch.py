@@ -23,11 +23,9 @@ def escapeBack():
 
 def charge():
     print("Charge forward")
-    if sensorsFrontClean:
+    while sensorsFrontClean:
         carEngine.forward(defaultRSpeed + 10, defaultLSpeed + 10)
         time.sleep(0.005)
-    else:
-        escapeBack()
 
 def sensorsFrontClean():
     if carEngine.getSensorA() == 0 and carEngine.getSensorB() == 0 and carEngine.getSensorC() == 0:
@@ -61,6 +59,7 @@ def lookForEnemy():
         else:
             print("Range is ", range, "CHARGING.")
             charge()
+            escapeBack()
 
 while True:
     lookForEnemy()
