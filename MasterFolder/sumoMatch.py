@@ -39,7 +39,9 @@ def sensorsFrontClean():
 
 
 def aBitForward():
-    carEngine.forward(defaultRSpeed, defaultLSpeed)
+    while sensorsFrontClean:
+        carEngine.forward(defaultRSpeed, defaultLSpeed)
+        time.sleep(0.3)
 
 
 def sensorBackClean():
