@@ -57,7 +57,7 @@ def lookForEnemy():
     elif sensorBackClean() is False:
         print("Sensors BACK are not clean, going front")
         charge()
-        time.sleep(1)
+        time.sleep(0.3)
         carEngine.stop()
     else:
         if range > 50:
