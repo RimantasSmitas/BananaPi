@@ -24,7 +24,7 @@ def escapeBack():
 def charge():
     print("Charge forward")
     if sensorsFrontClean:
-        carEngine.forward(defaultRSpeed + 5, defaultLSpeed +5)
+        carEngine.forward(defaultRSpeed + 10, defaultLSpeed + 10)
         time.sleep(0.005)
     else:
         escapeBack()
