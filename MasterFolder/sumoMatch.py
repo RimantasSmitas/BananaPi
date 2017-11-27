@@ -39,10 +39,11 @@ def sensorsFrontClean():
 
 
 def aBitForward():
-    if sensorsFrontClean:
-        carEngine.forward(defaultRSpeed, defaultLSpeed)
-        time.sleep(0.3)
-
+    for number in range(1, 10):
+        if sensorsFrontClean:
+            carEngine.forward(efaultRSpeed, defaultLSpeed)
+        else:
+            break
 
 def sensorBackClean():
     if carEngine.getSensorD() == 0:
