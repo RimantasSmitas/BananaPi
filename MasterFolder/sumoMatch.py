@@ -2,7 +2,6 @@ import RPi.GPIO as GPIO
 import time
 import signal, os
 import atexit
-
 import sys
 sys.path.insert(0, '/home/pi/robocar/MasterFolder')
 import carEngine
@@ -11,11 +10,10 @@ import carEngine
 
 defaultSpeed = 75
 defaultLSpeed = defaultSpeed
-defaultRSpeed = defaultSpeed -2.4
+defaultRSpeed = defaultSpeed - 2.4
 turnSpeedDifferenceLight = 40
 turnSpeedDifferenceHard = 25
 spinSpeedMultiplication = 0.25
-
 
 
 def escapeBack():
@@ -23,6 +21,7 @@ def escapeBack():
     carEngine.backwardsBoth(defaultRSpeed, defaultLSpeed)
     time.sleep(0.3)
     carEngine.stop()
+
 
 def charge():
     print("Charge forward")
@@ -39,6 +38,10 @@ def sensorsFrontClean():
     return False
 
 
+def aBitForward():
+    carEngine.forward(defaultRSpeed, defaultLSpeed)
+
+
 def sensorBackClean():
     if carEngine.getSensorD() == 0:
         return True
@@ -52,7 +55,7 @@ def lookForEnemy():
         escapeBack()
     elif sensorBackClean() is False:
         print("Sensors BACK are not clean, going front")
-        charge()
+        aBitForward()
     else:
         if range > 50:
             print("Range is ", range, " spinning left.")
