@@ -23,6 +23,9 @@ def escapeBack():
     carEngine.backwardsBoth(defaultRSpeed, defaultLSpeed)
     time.sleep(0.3)
     carEngine.stop()
+    carEngine.spinLeft(defaultRSpeed, defaultLSpeed, spinSpeedMultiplication)
+    time.sleep(0.3)
+
 
 
 def charge():
@@ -58,7 +61,6 @@ def lookForEnemy():
     else:
         if range > 50:
             print("Range is ", range, " spinning left.")
-
             carEngine.spinLeft(defaultRSpeed, defaultLSpeed, spinSpeedMultiplication)
         elif range < 50:
             print("Range is ", range, "CHARGING.")
