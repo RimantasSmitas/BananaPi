@@ -11,8 +11,8 @@ sleeptimer = 0.005
 defaultSpeed = 75
 defaultLSpeed = defaultSpeed
 defaultRSpeed = defaultSpeed - 2.4
-turnSpeedDifferenceLight = 25
-spinSpeedMultiplication = 0.35
+turnSpeedDifferenceLight = 40
+spinSpeedMultiplication = 0.20
 
 
 def lineFollow():
