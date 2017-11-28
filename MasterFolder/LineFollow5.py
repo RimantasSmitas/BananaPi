@@ -8,12 +8,12 @@ sys.path.insert(0, '/home/pi/robocar/MasterFolder')
 import carEngine
 
 sleeptimer = 0.005
-defaultSpeed = 80
+defaultSpeed = 75
 defaultLSpeed = defaultSpeed
 defaultRSpeed = defaultSpeed -2.4
-turnSpeedDifferenceLight = 50
-turnSpeedDifferenceHard = 35
-spinSpeedMultiplication = 0.4
+turnSpeedDifferenceLight = 40
+turnSpeedDifferenceHard = 25
+spinSpeedMultiplication = 0.3
 
 
 
@@ -39,7 +39,7 @@ def lineFollow():
             carEngine.forward(defaultRSpeed,defaultLSpeed)
             print("Forward")
         elif carEngine.getSensorA()==0 and carEngine.getSensorB()==0 and carEngine.getSensorC()==0:
-            carEngine.backwardsBoth(defaultRSpeed - 10,defaultLSpeed - 10)
+            carEngine.backwardsBoth(defaultRSpeed,defaultLSpeed)
             print("Backward")
         time.sleep(sleeptimer)
 
