@@ -11,9 +11,9 @@ sleeptimer = 0.005
 defaultSpeed = 70
 defaultLSpeed = defaultSpeed
 defaultRSpeed = defaultSpeed -2.4
-turnSpeedDifferenceLight = 30
-turnSpeedDifferenceHard = 15
-spinSpeedMultiplication = 0.3
+turnSpeedDifferenceLight = 35
+turnSpeedDifferenceHard = 20
+spinSpeedMultiplication = 0.25
 
 
 
