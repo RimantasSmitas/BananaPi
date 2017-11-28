@@ -8,7 +8,7 @@ import carEngine
 
 # Fighting functions
 
-defaultSpeed = 75
+defaultSpeed = 72.5
 defaultLSpeed = defaultSpeed
 defaultRSpeed = defaultSpeed - 2.4
 turnSpeedDifferenceLight = 40
