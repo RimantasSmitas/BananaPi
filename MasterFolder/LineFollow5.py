@@ -13,7 +13,7 @@ defaultLSpeed = defaultSpeed
 defaultRSpeed = defaultSpeed -2.4
 turnSpeedDifferenceLight = 50
 turnSpeedDifferenceHard = 35
-spinSpeedMultiplication = 0.3
+spinSpeedMultiplication = 0.4
 
 
 
