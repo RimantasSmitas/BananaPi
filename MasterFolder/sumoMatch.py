@@ -18,13 +18,13 @@ spinSpeedMultiplication = 0.25
 def escapeBack():
     print("Escaping to the back.")
     carEngine.backwardsBoth(defaultRSpeed, defaultLSpeed)
-    time.sleep(0.3)
+    time.sleep(0.2)
     carEngine.stop()
 
 def charge():
     print("Charge forward")
     if sensorsFrontClean:
-        carEngine.forward(defaultRSpeed + 10, defaultLSpeed + 10)
+        carEngine.forward(defaultRSpeed + 5, defaultLSpeed + 5)
         time.sleep(0.005)
     else:
         escapeBack()
