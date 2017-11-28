@@ -66,6 +66,16 @@ class motorController:
         return index_html
 
     @cherrypy.expose
+    def notLeft(self):
+        carEngine.right(defaultRSpeed, defaultLSpeed, turnSpeedDifferenceLight)
+        return index_html
+
+    @cherrypy.expose
+    def notRight(self):
+        carEngine.left(defaultRSpeed, defaultLSpeed, turnSpeedDifferenceLight)
+        return index_html
+
+    @cherrypy.expose
     def backwardsBoth(self):
         carEngine.backwardsBoth(defaultRSpeed, defaultLSpeed)
         return index_html
