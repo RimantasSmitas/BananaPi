@@ -7,11 +7,11 @@ import sys
 sys.path.insert(0, '/home/pi/robocar/MasterFolder')
 import carEngine
 
-sleeptimer = 0.002
-defaultSpeed = 85
+sleeptimer = 0.005
+defaultSpeed = 90
 defaultLSpeed = defaultSpeed
 defaultRSpeed = defaultSpeed - 2.4
-turnSpeedDifferenceLight = 40
+turnSpeedDifferenceLight = 30
 spinSpeedMultiplication = 0.15
 
 
