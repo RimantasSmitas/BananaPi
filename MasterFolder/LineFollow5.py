@@ -12,7 +12,7 @@ defaultSpeed = 65
 defaultLSpeed = defaultSpeed
 defaultRSpeed = defaultSpeed - 2.4
 turnSpeedDifferenceLight = 30
-spinSpeedMultiplication = 0.3
+spinSpeedMultiplication = 0.35
 
 
 def lineFollow():
