@@ -8,7 +8,7 @@ import carEngine
 
 # Fighting functions
 
-defaultSpeed = 75
+defaultSpeed = 72.5
 defaultLSpeed = defaultSpeed
 defaultRSpeed = defaultSpeed - 2.4
 turnSpeedDifferenceLight = 40
@@ -18,13 +18,13 @@ spinSpeedMultiplication = 0.25
 def escapeBack():
     print("Escaping to the back.")
     carEngine.backwardsBoth(defaultRSpeed, defaultLSpeed)
-    time.sleep(0.3)
+    time.sleep(0.2)
     carEngine.stop()
 
 def charge():
     print("Charge forward")
     if sensorsFrontClean:
-        carEngine.forward(defaultRSpeed + 10, defaultLSpeed + 10)
+        carEngine.forward(defaultRSpeed, defaultLSpeed)
         time.sleep(0.005)
     else:
         escapeBack()
@@ -38,6 +38,7 @@ def aBitForward():
     for number in range(1, 10):
         if sensorsFrontClean:
             carEngine.forward(defaultRSpeed, defaultLSpeed)
+            time.sleep(0.08)
         else:
             break
 
